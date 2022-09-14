@@ -15,7 +15,15 @@ public ArrayList<Superhero> getSuperheroes(){
 
 
     }
-
+    public Superhero findSuperHero(String heroName){
+      for(int i = 0; i < superheroes.size(); i++){
+          if (superheroes.get(i).getSuperHeroName().toLowerCase().contains(heroName.toLowerCase())){
+             return superheroes.get(i);
+          }
+      }
+        System.out.println("The name doesn't exist");
+      return null;
+    }
 }
 
 
