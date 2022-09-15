@@ -30,7 +30,7 @@ public String getSuperPower(){
 
 
         public String toString() {
-            allAttributes =  superHeroName + " - " + realName + " - " + superPower + "\n";
+            allAttributes =  superHeroName + " - " + realName + " - " + superPower;
             return allAttributes;}
 
         public void setSuperHeroName(String superHeroName){
