@@ -19,7 +19,7 @@ public class Database {
     public void findSuperHero(String heroName) {
         for (int i = 0; i < superheroes.size(); i++) {
             if (superheroes.get(i).getSuperHeroName().toLowerCase().contains(heroName.toLowerCase())) {
-                System.out.println(superheroes.get(i));
+                System.out.println(superheroes.get(i).getSuperHeroName());
 
             }
         }

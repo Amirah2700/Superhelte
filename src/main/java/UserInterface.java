@@ -38,7 +38,7 @@ public class UserInterface{
         }
 
     } while (brugervalg != 4);
-    public void
+
 }
     }
 
