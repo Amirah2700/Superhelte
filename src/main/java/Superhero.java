@@ -33,13 +33,14 @@ public String getSuperPower(){
             allAttributes =  superHeroName + " - " + realName + " - " + superPower;
             return allAttributes;}
 
-        public void setSuperHeroName(String superHeroName){
-            this.superHeroName = superHeroName;
-            //public void setRealName(String realName){
-                this.superHeroName = realName;
+        public void setSuperHeroName(String superHeroName) {
+            this.superHeroName = superHeroName;}
+            public void setRealName (String realName){
+                this.realName = realName;}
 
-                //public void setSuperPower(String superPower){
-                    //this.superHeroName = superPower;
+                public void setSuperPower (String superPower){
+                    this.superPower = superPower;
 
-        }
-    }
+                }
+            }
+

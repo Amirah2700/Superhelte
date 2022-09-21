@@ -16,15 +16,20 @@ public class Database {
 
     }
 
-    public void findSuperHero(String heroName) {
+    public ArrayList<Superhero> findSuperHero(String heroName) {
+        ArrayList<Superhero> superheroes1 = new ArrayList<>();
         for (int i = 0; i < superheroes.size(); i++) {
             if (superheroes.get(i).getSuperHeroName().toLowerCase().contains(heroName.toLowerCase())) {
-                System.out.println(superheroes.get(i).getSuperHeroName());
+                superheroes1.add(superheroes.get(i));
 
             }
         }
-        System.out.println("The name doesn't exist");
 
+        return superheroes1;
+
+    }
+    public int getSize(){
+        return superheroes.size();
     }
 
     public String toString() {
@@ -36,7 +41,10 @@ public class Database {
         }
         System.out.println(" List of superheroes " + databasestring);
         return String.valueOf(databasestring);
+
+
     }
+
 }
 
 
