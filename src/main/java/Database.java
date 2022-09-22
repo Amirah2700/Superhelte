@@ -46,6 +46,7 @@ public class Database {
 
 
     }
+
     public boolean deleteHero (Superhero superhero){
         return superheroes.remove(superhero);
     }

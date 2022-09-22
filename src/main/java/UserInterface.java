@@ -8,8 +8,6 @@ public class UserInterface {
     Database heroDatabase = new Database();
 
     public void startProgram() {
-
-
         int brugervalg = 0;
         do {
             System.out.println("""
@@ -50,15 +48,20 @@ public class UserInterface {
             else if (brugervalg == 5){
                 deleteHero();
             }
-            else {
-                System.exit(0);
+            else {System.exit(0);
             }
 
 
         } while (brugervalg != 9);
 
     }
-
+    // public int validateInt(String message){
+       // while (!scanner.hasNextInt()){
+        //    System.out.println("Please choose one of the numbers above");
+        //    scanner.next();
+       // }                     ku ikke få det til at virke
+      //  return scanner.nextInt();
+    //}
 
     public Superhero chooseSuperhero(ArrayList<Superhero> heroList) {
         if (heroList.size() != 0) {
