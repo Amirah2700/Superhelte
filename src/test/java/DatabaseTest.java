@@ -29,7 +29,7 @@ class DatabaseTest {
     @Test
     void addSuperhero() {
         db.addSuperhero("Batman", "Bruce Wayne", "Fighting");
-        assertEquals(db.getSize(),1);
+        assertEquals(db.getSize(),4);
     }
 
     @org.junit.jupiter.api.Test

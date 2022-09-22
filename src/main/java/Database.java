@@ -28,7 +28,8 @@ public class Database {
         return superheroes1;
 
     }
-    public int getSize(){
+
+    public int getSize() {
         return superheroes.size();
     }
 
@@ -43,8 +44,11 @@ public class Database {
         return String.valueOf(databasestring);
 
 
-    }
 
+    }
+    public boolean deleteHero (Superhero superhero){
+        return superheroes.remove(superhero);
+    }
 }
 
 

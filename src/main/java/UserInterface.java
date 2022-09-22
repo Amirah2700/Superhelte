@@ -3,11 +3,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
+
     private final Scanner scanner = new Scanner(System.in);
+    Database heroDatabase = new Database();
 
     public void startProgram() {
 
-        Database heroDatabase = new Database();
+
         int brugervalg = 0;
         do {
             System.out.println("""
@@ -16,7 +18,8 @@ public class UserInterface {
                     Press 2: Show list of superheroes
                     Press 3: Search for hero
                     Press 4: Edit a hero
-                    Press 5: Exit""");
+                    Press 5: Delete a hero
+                    Press 9: Exit""");
 
             brugervalg = scanner.nextInt();
             scanner.nextLine();
@@ -43,13 +46,19 @@ public class UserInterface {
                 String heroName = scanner.nextLine();
                 editHero(chooseSuperhero(heroDatabase.findSuperHero(heroName)));
 
-            } else {
+            }
+            else if (brugervalg == 5){
+                deleteHero();
+            }
+            else {
                 System.exit(0);
             }
 
 
-        } while (brugervalg != 5);
+        } while (brugervalg != 9);
+
     }
+
 
     public Superhero chooseSuperhero(ArrayList<Superhero> heroList) {
         if (heroList.size() != 0) {
@@ -75,25 +84,42 @@ public class UserInterface {
 
         }
     }
-        public void editHero(Superhero editSuperhero){
+
+    public void editHero(Superhero editSuperhero) {
         System.out.println("Edit Superhero:" + editSuperhero);
 
-        System.out.println("Press enter for editing a superhero");
+        System.out.println("Press enter to edit a superhero");
         System.out.println("Superhero name" + editSuperhero.getSuperHeroName());
         String newSuperheroName = scanner.nextLine();
         if (!newSuperheroName.isEmpty()) {
             editSuperhero.setSuperHeroName(newSuperheroName);
         }
-        System.out.println("Superhero Real name" + editSuperhero.getRealName());
+        System.out.println("Superhero Real name" + " " + editSuperhero.getRealName());
         String newRealName = scanner.nextLine();
         if (!newRealName.isEmpty()) {
             editSuperhero.setRealName(newRealName);
 
-            System.out.println("Superpower" + editSuperhero.getSuperPower());
+            System.out.println("Superpower" + " " + editSuperhero.getSuperPower());
             String newSuperPower = scanner.nextLine();
             if (!newSuperPower.isEmpty()) {
                 editSuperhero.setSuperPower(newSuperPower);
+
             }
+        }
+    }
+
+    public void deleteHero() {
+        for (int i = 0; i <heroDatabase.getSize() ; i++) {
+            System.out.println(i + 1 + " " + heroDatabase.getSuperheroes().get(i).getSuperHeroName());
+        }
+        int searchForHero = scanner.nextInt()-1;
+        scanner.nextLine();
+        boolean isDeleted = heroDatabase.deleteHero(heroDatabase.getSuperheroes().get(searchForHero));
+        if (isDeleted){
+            System.out.println("The superhero has been deleted");
+        }
+        else {
+            System.out.println("The superhero couldn't be deleted");
         }
     }
 }
