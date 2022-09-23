@@ -19,7 +19,7 @@ public class UserInterface {
                     Press 5: Delete a hero
                     Press 9: Exit""");
 
-            brugervalg = scanner.nextInt();
+            brugervalg = validateInt();
             scanner.nextLine();
             if (brugervalg == 1) {
 
@@ -55,13 +55,13 @@ public class UserInterface {
         } while (brugervalg != 9);
 
     }
-    // public int validateInt(String message){
-       // while (!scanner.hasNextInt()){
-        //    System.out.println("Please choose one of the numbers above");
-        //    scanner.next();
-       // }                     ku ikke få det til at virke
-      //  return scanner.nextInt();
-    //}
+     public int validateInt(){
+       while (!scanner.hasNextInt()){
+          System.out.println("Please choose one of the numbers above");
+          scanner.next();
+       }
+      return scanner.nextInt();
+    }
 
     public Superhero chooseSuperhero(ArrayList<Superhero> heroList) {
         if (heroList.size() != 0) {
